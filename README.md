@@ -27,7 +27,8 @@ You might want to read through this whole section before trying one, as both the
 We are going to add devices here and assign them functions that happen when you turn them on and when you turn them off in smartthings. This doesn't need to actually be the power button on your remote.  Let's walk through the steps, and then I will explain some creative ways to use them afterward.  
 
 For each device you want to control:
-1.	On the main page of the e-control app, clock the "+" sign and select "add remote."
+
+1. On the main page of the e-control app, clock the "+" sign and select "add remote."
 
 2.	A set of templates will be offered.  Select "User-defined."
 
