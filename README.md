@@ -1,4 +1,6 @@
 # Broadlink-RM-LAN-Control
+## UPDATE - lower cost, easier version is in the works (hopefully no later than mid-June 2016).  This version will still work if you are in a hurry or already own the RM Tasker app.
+
 ## What this app does:
 This set of codes lets you link up many (likely most) of your RF- and IR-controlled devices to smartthings, and in turn to any other services linked to you smartthings account, such as IFTTT or Amazon’s Echo (Alexa).  The total cost of needed items (besides the optional smartthings hub) is around $35 at the time of this writing.  There are two versions of this app.  The one in this repo allows you to use your smartthings hub for local LAN control of the devices.  The other version (to be published soon) requires you to open a port on your router and review your associated network security, but does not require you to own or use a smartthings hub.  Because of security and the fact that smartthings is hosting the service, I'd recommend the version with the hub. 
 
