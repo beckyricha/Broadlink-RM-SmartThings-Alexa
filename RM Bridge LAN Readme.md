@@ -26,7 +26,7 @@ You could also get very creative and add any number of things in a way where Ale
 2. Click "my device handlers" and on the page that leads to,  click "create new device handler."
 3. Ignore all the default information that comes up, and select the tab that says "from code."
 4. Paste in the text from the file in my github called "Broadlink RM Bridge Switch LAN."
-5. On line 46, where it reads def url1="xxx.xxx.x.x:xxxx" you need to manually overwrit the x's with your ip and port from the RM Bridge app.  This will probably look like 192.168.1.2:7474 or something similar with your specific numbers.  If you entered a password in the RM bridge app, you need to add those to your ip address so it the above would now look like yourusername:yourpassword@192.168.1.2:7474  where those are your actual user name, password and ip address.  For "BLURL" enter the ip address and port of your bridge that you wrote down earlier.  do not include the "http://" 
+5. On line 46, where it reads def url1="xxx.xxx.x.x:xxxx" you need to manually overwrite the x's with your ip and port from the RM Bridge app.  This will probably look like 192.168.1.2:7474 or something similar with your specific numbers.  If you entered a password in the RM bridge app, you need to add those to your ip address so it the above would now look like yourusername:yourpassword@192.168.1.2:7474  where those are your actual user name, password and ip address.  Do not include the "http://" 
 5. Click the "create" button. 
 6. At the top of the code, select "publish" and "for me."
 ## Add your devices to SmartTings
