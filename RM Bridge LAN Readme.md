@@ -32,5 +32,8 @@ For each device you want to add, perform the fllowing steps while still in the s
 1. Click "my devices" near the top of the screen.
 2. Click "New Device"
 3. Give the device the exact same name as you entered in the web site when you were setting up the code learning, but do not follow it with a space or the word "off" or "on" as you did there. (technically you cold naame it something different as the label field is the one the code uses; this will match the name if you leave it blank).
-4. Give the device a unique network ID.  It does not matter what this is and you won;t need to remember it, but it needs to be present and unique.  I often use some variant of the device name but you can name however works for your network.
-Your device should now appear in the SmartThings app and wrk, and you can import it into Alexa for use there.
+4. Give the device a unique network ID.  It does not matter what this is and you won't need to remember it, but it needs to be present and unique.  I often use some variant of the device name but you can name however works for your network.
+5. In the dropdown for device type, select "RM Bridge Switch LAN"
+6. Click "create"
+
+Your device should now appear in the SmartThings app and work properly, and you can import it into Alexa for use there.
