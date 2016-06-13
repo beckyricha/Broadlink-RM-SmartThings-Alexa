@@ -29,13 +29,14 @@ For each device you want to control:
 
 9.	If you are using an IR remote, press "learn" and press the remote button as prompted.  If an RF remote, select "sweep frequency" and follow the instructions.
 
-10.	If you are learning a sequence of buttons, each one is the same as step 9.  Press the + sign and follow he instructions for each button.  Note that you can insert timing delays between them, which I found useful for my TV to accept the commands.
+10.	If you are learning a sequence of buttons, each one is the same as step 9.  Press the + sign and follow the instructions for each button.  Note that you can insert timing delays between them, which I found useful for my TV to accept the commands.
 
 11.	Try your new button and make sure it works.
 
 12.	Add another button if desired, remembering that they have to be named "on" or "off" to work with this app.
 
 Here's where some creativity can help, now that you've seen what the steps are.  Even though the broadlink presents this as "remotes" and "keys" they don't need to physically map to that, but can be any action you want to put into a smartthings scene or action, or to trigger with the echo by saying "Alexa turn on _____" or "start _____".  It sometimes even responds to "switch to ________" which can be very natural.  For example, you could have something easy like a light switch or outlet controller that does have an on switch and an off switch.  You could also have a TV, where on and off are the same button, but you need to program it in twice, once with the name "on" and once with the name "off" if you want it to respond to both commands.  
+
 You could also get very creative and add any number of things in a way where Alexa can control them.  If you set up a device called ESPN, and its "on button" is programmed to the keystrokes for that channel, your Alexa can respond to "turn on ESPN."  "Turn on the television" for me turns on the TV,  remote HD sender I have and switches the HDMI to the proper input. "Turn to the other input" activates my HDMI switch, or you could program the keystrokes needed on your TV remote.  I programmed in a single fan remote as 3 devices: "low fan," "medium fan" and "high fan."  Each one has its corresponding button set to "on" and the overall remote's "off" switch assigned to all 3.  I also made one just called "fan" and set its off switch as well.  Now I can tell Alexa to turn on the "low fan" or just to turn off the fan.  The possibilities are endless.
 
 ## Set up your Android bridge:
@@ -43,14 +44,14 @@ Install the RM tasker app and follow its instructions for importing the codes.  
 
 ## Install this app into SmartThings (finally):
 You need two different bits of code, installed in this order:
-1. Go to Smart Things IDE (https://graph.api.smartthings.com/) and log in. You may need to do this on a computer.  I have difficulty getting it to work right browsing on a phone.
+1. Go to [Smart Things IDE] (https://graph.api.smartthings.com/) and log in. You may need to do this on a computer.  I have difficulty getting it to work right browsing on a phone.
 
 2. Click "my device handlers" and on the page that leads to,  click "create new device handler."
 
 3. Ignore all the default information that comes up, and select the tab that says "from code."
 
 4. Paste in the text from the file in my github called "Broadlinkswitch device handler."
-  a.	Note for advanced users (you know who you are if this applies as it's not most people): If you have set up your own namespace, that needs to be changed manually both in this handler and my smartapp, as it actually gets used in device creation; 
+  a.	Note for advanced users (you know who you are if this applies as it's not most people): If you have set up your own namespace, that needs to be changed manually both in this handler and my smartapp, as it actually gets used in device creation. 
 
 5. Click the "create" button. 
 
@@ -60,7 +61,7 @@ You need two different bits of code, installed in this order:
 
 8. Select the button above the code that says "app settings" and then a link on the page that comes up called "settings."  There should be two boxes to enter info about your Broadlink device.
 
-9. For "BLURL" enter the ip address and port of your bridge that you wrote down earlier.  It should not include the "Http://" so it will probably look something like 192.168.1.xxx:9876 unless you have different network settings or changed the port number.
+9. For "BLURL" enter the ip address and port of your bridge that you wrote down earlier.  It should not include the "http://" so it will probably look something like 192.168.1.xxx:9876 unless you have different network settings or changed the port number.
 
 10. BLMac is the mac address for your Broadlink.  The easiest way to get that, if your RM Bridge app is running, is to go to its web site by entering the same ip address above into a browser.  It has lots of info about your setup.  Copy and paste the mac address version without the colons.
 
@@ -82,4 +83,4 @@ If you truly love this but want it to work with more than one Broadlink scattere
 
 ## Note for those who want to use pretty device templates in the e-control app
 
-If you want to use the nice device templates in e-control and not make separate on and off buttons, it takes more work but you have two other options. Either way you would need to find the right codes in the RM Tasker app. You can either change the code's name in rm tasker or manually enter and update your device using the manual entry smartapp as described under troubleshooting for missing devices above.
+If you want to use the nice device templates in e-control and not make separate on and off buttons, it takes more work but you have two other options. Either way you would need to find the right codes in the RM Tasker app. You can either change the code's name in rm tasker or find the codes you want to link to "on" and "off," and manually enter your device using the manual entry smartapp as described under troubleshooting for missing devices above.
