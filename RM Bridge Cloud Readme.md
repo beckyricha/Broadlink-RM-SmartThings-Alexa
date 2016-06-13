@@ -1,5 +1,5 @@
 # Read the main [readme](https://github.com/beckyricha/Broadlink-RM-LAN-Control/blob/master/README.md) for this repository first!
-This document contains the setup instructions for the SmartApp version that does not require a SmartThings hub, instead using cloud-based control and the app "RM Bridge" as a bridge.  Thie requires that you open a port on your router.  You should, at a minimum, set up the security features in the RM Bridge app, but may wish to consider other security concepts as well.  Research and decisions about network security are your responsibility, and I won't be liable for that if you use this code.
+This document contains the setup instructions for the SmartApp version that does not require a SmartThings hub, instead using cloud-based control and the app "RM Bridge" as a bridge.  This requires that you open a port on your router.  You should, at a minimum, set up the security features in the RM Bridge app, but may wish to consider other security concepts as well.  Research and decisions about network security are your responsibility, and I won't be liable for that if you use this code.
 
 ## Set up your network
 Obtain an externally accessible and stable ip address.  This will be easiest if you use a dynamic DNS service, whihc can be ontained for free.  Setting that up is outside the scope of this readme but caan be found online easily.
