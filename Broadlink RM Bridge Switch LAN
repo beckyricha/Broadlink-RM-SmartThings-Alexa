@@ -14,7 +14,7 @@
  *
  */
 metadata {
-	definition (name: "RM Bridge Switch LAN", namespace: "smartthings", author: "BeckyR") {
+	definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
 		capability "Switch"
 	}
 
@@ -32,6 +32,7 @@ metadata {
 }
  
 def on() {
+	log.debug "code running"
     put('on')
    
    
@@ -42,13 +43,15 @@ def off() {
 }
  
 private put(toggle) {
-	def url1="xxx.xxx.x.x:xxxx"
-  def toReplace = device.displayName
+    def url1="xxx.xxx.x.x:xxxx"
+    def userpassascii= "username:password"
+    def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
+    def toReplace = device.displayName
 	def replaced = toReplace.replaceAll(' ', '%20')
  	def hubaction = new physicalgraph.device.HubAction(
 				method: "GET",
                path: "/code/$replaced%20$toggle",
-               headers: [HOST: "${url1}"],
+               headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
                )
    			return hubaction
    }
