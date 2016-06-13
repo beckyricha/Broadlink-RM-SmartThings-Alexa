@@ -1,4 +1,4 @@
-# Read the main [readme](https://github.com/beckyricha/Broadlink-RM-LAN-Control/blob/master/README.md) for this repository first!
+# Read the main [readme](https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/README.md) for this repository first!
 This document contains the setup instructions for the SmartApp version that uses the SmartThings hub for local LAN control and the RM Tasker app as a bridge.
 
 ## Set-up your Broadlink RM:
