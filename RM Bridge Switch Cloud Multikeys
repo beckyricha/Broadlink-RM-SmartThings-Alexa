@@ -38,7 +38,7 @@ def on() {
 }
 
 def off() {
-	delayBetween([put('on'),put('on2'),put('on3'),put('on4')],0)
+	delayBetween([put('off'),put('off2'),put('off3'),put('off4')],0)
 }
  
 private put(toggle) {
