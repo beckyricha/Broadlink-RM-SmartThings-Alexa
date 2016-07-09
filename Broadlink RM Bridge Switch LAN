@@ -43,15 +43,17 @@ def off() {
 }
  
 private put(toggle) {
-    def url1="xxx.xxx.x.x:xxxx"
-    def userpassascii= "username:password"
-    def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
-    def toReplace = device.displayName
-	def replaced = toReplace.replaceAll(' ', '%20')
- 	def hubaction = new physicalgraph.device.HubAction(
-				method: "GET",
-               path: "/code/$replaced%20$toggle",
-               headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+	if(state.currentState == null || state.currentState != toggle){
+    		def url1="xxx.xxx.x.x:xxxx"
+    		def userpassascii= "username:password"
+    		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
+    		def toReplace = device.displayName
+		def replaced = toReplace.replaceAll(' ', '%20')
+ 		def hubaction = new physicalgraph.device.HubAction(
+			method: "GET",
+               		path: "/code/$replaced%20$toggle",
+               		headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
                )
-   			return hubaction
+   		return hubaction
+   	}
    }
