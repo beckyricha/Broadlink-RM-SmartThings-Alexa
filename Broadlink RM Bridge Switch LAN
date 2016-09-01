@@ -11,7 +11,8 @@
  *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
  *  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License
  *  for the specific language governing permissions and limitations under the License.
- *
+ * 
+ *  09/01/2016 Updated Device Name to Device ID - itsamti
  */
 metadata {
 	definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
@@ -47,6 +48,8 @@ private put(toggle) {
     def userpassascii= "username:password"
     def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
     def toReplace = device.displayName
+     // def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
+    def toReplace = device.deviceNetworkId
 	def replaced = toReplace.replaceAll(' ', '%20')
  	def hubaction = new physicalgraph.device.HubAction(
 				method: "GET",
