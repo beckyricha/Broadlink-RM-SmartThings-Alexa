@@ -92,6 +92,9 @@ def off() {
 	log.debug "$version off()"
 	sendEvent(name: "switch", value: "off")
 	put('off')
+   //  sleepForDuration(15000)
+   //  put('on')
+  //  return hubaction
 }
 
 def onPhysical() {
@@ -104,6 +107,9 @@ def offPhysical() {
 	log.debug "$version offPhysical()"
 	sendEvent(name: "switch", value: "off", type: "physical")
 	put('off')
+  //   sleepForDuration(15000)
+   //  put('on')
+   // return hubaction
 }
 
 private getVersion() {
@@ -120,20 +126,40 @@ private put(toggle) {
 	def replaced = toReplace.replaceAll(' ', '%20')
     // 09/01/2016 Added debug log
     log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
- 	def hubactionOne = new physicalgraph.device.HubAction(
+ 	/*def hubactionOne = 
+    new physicalgraph.device.HubAction(
 				method: "GET",
                path: "/code/$replaced%20$toggle",
                headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
-               )
-    sleepForDuration(500)
-    log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
-    def hubaction = new physicalgraph.device.HubAction(
+               ) */
+   // sleepForDuration(15000)
+   // log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
+  /* def hubaction = new physicalgraph.device.HubAction(
 				method: "GET",
                path: "/code/$replaced%20$toggle",
              // path: "/code/$replaced%20$off",
                headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+               //delayAction(1000), refresh()
                )
-    		 return hubaction
+    	return hubaction 
+        */
+        sendHubCommand( new physicalgraph.device.HubAction(
+				method: "GET",
+               path: "/code/$replaced%20$toggle",
+             // path: "/code/$replaced%20$off",
+               headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+               //delayAction(1000), refresh()
+               ))
+               sleepForDuration(500)
+      // 09/01/2016 Added debug log
+     log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
+                sendHubCommand( new physicalgraph.device.HubAction(
+				method: "GET",
+               path: "/code/$replaced%20$toggle",
+            // path: "/code/$replaced%20$off",
+               headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+              // delayAction(10000), refresh()
+               ))
    }
    
    
