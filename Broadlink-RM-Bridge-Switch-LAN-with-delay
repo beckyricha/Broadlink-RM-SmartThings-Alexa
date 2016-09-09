@@ -32,15 +32,18 @@ metadata
 
 	tiles 
 		{
+			//Created Tile for toggle switch -itsamti
 			standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) 
 				{
 					state "off", label: '${currentValue}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
 					state "on", label: '${currentValue}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#79b821"
 				}
+			//Created Tile for seperate button for ON -itsamti
 			standardTile("on", "device.switch", decoration: "flat") 
 				{
 					state "default", label: 'On', action: "onPhysical", backgroundColor: "#ffffff"
 				}
+			//Created Tile for seperate button for OFF -itsamti
 			standardTile("off", "device.switch", decoration: "flat") 
 				{
 					state "default", label: 'Off', action: "offPhysical", backgroundColor: "#ffffff"
@@ -58,37 +61,31 @@ def parse(String description)
 
 def on() 
 	{
-		log.debug "$version on()"
+		log.debug "$device.displayName on()"
 		sendEvent(name: "switch", value: "on")
 		put('on')
 	}
 
 def off() 
 	{
-		log.debug "$version off()"
+		log.debug "$device.displayName off()"
 		sendEvent(name: "switch", value: "off")
 		put('off')
 	}
 
 def onPhysical() 
 	{
-		log.debug "$version onPhysical()"
+		log.debug "$device.displayName onPhysical()"
 		sendEvent(name: "switch", value: "on", type: "physical")
 		put('on')
 	}
 
 def offPhysical() 
 	{
-		log.debug "$version offPhysical()"
+		log.debug "$device.displayName offPhysical()"
 		sendEvent(name: "switch", value: "off", type: "physical")
 		put('off')
 	}
-
-private getVersion() 
-	{
-	"PUBLISHED"
-	}
-
 
 private put(toggle) 
 	{
