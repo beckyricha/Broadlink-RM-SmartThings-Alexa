@@ -13,115 +13,150 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  *  09/01/2016 Updated Device Name to Device ID - itsamti
+ *  09/09/2016 Added Delay function  sleepForDuration(500) to sleep 500ms and re-execute on/off one more time to ensure broadlink turn on/off in second try if first one doesnt work - itsamti
  */
  
- 
- /*  Commented on 09/01/2016 - itsamti as switches were not remembering last state
- metadata {
-	definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
-		capability "Switch"
-	}
-
-
-	// tile definitions
-	tiles {
-		standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) {
-			state "on", label: '${name}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#79b821"
-			state "off", label: '${name}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
-		}
-
-		main "switch"
-		details "switch"
-	}
-}
- 
-def on() {
-	log.debug "code running"
-    put('on')
-   
-   
-}
-
-def off() {
-	put('off')
-}
- 
- */
- 
-// 09/01/2016 - itsamti - Added new switch definition below 
-metadata {
+ // 09/01/2016 - itsamti - Added new switch definition below 
+metadata 
+{
 	
-    definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
-		capability "Switch"
-        capability "Relay Switch"
-		capability "Sensor"
-		capability "Actuator"
+    definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") 
+		{
+			capability "Switch"
+			capability "Relay Switch"
+			capability "Sensor"
+			capability "Actuator"
+			command "onPhysical"
+			command "offPhysical"
+		}
 
-		command "onPhysical"
-		command "offPhysical"
+	tiles 
+		{
+			//Created Tile for toggle switch -itsamti
+			standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) 
+				{
+					state "off", label: '${currentValue}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
+					state "on", label: '${currentValue}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#79b821"
+				}
+			//Created Tile for seperate button for ON -itsamti
+			standardTile("on", "device.switch", decoration: "flat") 
+				{
+					state "default", label: 'On', action: "onPhysical", backgroundColor: "#ffffff"
+				}
+			//Created Tile for seperate button for OFF -itsamti
+			standardTile("off", "device.switch", decoration: "flat") 
+				{
+					state "default", label: 'Off', action: "offPhysical", backgroundColor: "#ffffff"
+				}
+			main "switch"
+			details(["switch","on","off"])
+		}
+}
+
+def parse(String description) 
+	{
+		def pair = description.split(":")
+		createEvent(name: pair[0].trim(), value: pair[1].trim())
 	}
 
-	tiles {
-		standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) {
-			state "off", label: '${currentValue}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
-			state "on", label: '${currentValue}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#79b821"
-		}
-		standardTile("on", "device.switch", decoration: "flat") {
-			state "default", label: 'On', action: "onPhysical", backgroundColor: "#ffffff"
-		}
-		standardTile("off", "device.switch", decoration: "flat") {
-			state "default", label: 'Off', action: "offPhysical", backgroundColor: "#ffffff"
-		}
-        main "switch"
-		details(["switch","on","off"])
+def on() 
+	{
+		log.debug "$device.displayName on()"
+		//sendEvent(name: "switch", value: "on")
+        sendEvent(name: "switch", value: "on", type: "physical")
+		put('on')
 	}
-}
 
-def parse(String description) {
-	def pair = description.split(":")
-	createEvent(name: pair[0].trim(), value: pair[1].trim())
-}
+def off() 
+	{
+		log.debug "$device.displayName off()"
+		//sendEvent(name: "switch", value: "off")  //itsamti - Had to use ', type: "physical" ' so that it will on/off via commands in routine. 
+        sendEvent(name: "switch", value: "off", type: "physical")
+		put('off')
+	}
 
-def on() {
-	log.debug "$version on()"
-	sendEvent(name: "switch", value: "on")
-	put('on')
-}
+def onPhysical() 
+	{
+		log.debug "$device.displayName onPhysical()" //itsamti- Had to use ', type: "physical" ' so that it will on/off via commands in routine
+		sendEvent(name: "switch", value: "on", type: "physical")
+		put('on')
+	}
 
-def off() {
-	log.debug "$version off()"
-	sendEvent(name: "switch", value: "off")
-	put('off')
-}
+def offPhysical() 
+	{
+		log.debug "$device.displayName offPhysical()"
+		sendEvent(name: "switch", value: "off", type: "physical")
+		put('off')
+	}
 
-def onPhysical() {
-	log.debug "$version onPhysical()"
-	sendEvent(name: "switch", value: "on", type: "physical")
-	put('on')
-}
-
-def offPhysical() {
-	log.debug "$version offPhysical()"
-	sendEvent(name: "switch", value: "off", type: "physical")
-	put('off')
-}
-
-private getVersion() {
-	"PUBLISHED"
-}
-
-
-private put(toggle) {
-    def url1="xxx.xxx.x.x:xxxx"
-    def userpassascii= "user:password"
-    def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
-    // def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
-    def toReplace = device.deviceNetworkId
-	def replaced = toReplace.replaceAll(' ', '%20')
- 	def hubaction = new physicalgraph.device.HubAction(
-				method: "GET",
-               path: "/code/$replaced%20$toggle",
-               headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
-               )
-   			return hubaction
+private put(toggle) 
+	{
+		def url1="xxx.xxx.x.x:xxxx"
+		def userpassascii= "user:password"
+		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
+		
+		// Using Network ID instead of device name -- def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
+		def toReplace = device.deviceNetworkId    
+		
+		// replacing all spaces with %20
+		def replaced = toReplace.replaceAll(' ', '%20') 
+		
+		// 09/01/2016 Added debug log
+		log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle" 
+		
+		//Sleeping for 500ms
+		//sleepForDuration(250)
+        
+        // Calling HTTP on/off			   
+		sendHubCommand
+					( 
+						new physicalgraph.device.HubAction
+							(
+								method: "GET",
+								path: "/code/$replaced%20$toggle",
+								headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+							)
+				   )
+		
+		//Sleeping for 500ms
+		//sleepForDuration(250)
+		 
+		 // 09/09/2016 Added debug log and recalling same http command one more time
+		// log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
+				   
+		// Calling HTTP on/off			   
+	/*	sendHubCommand
+					( 
+						new physicalgraph.device.HubAction
+							(
+								method: "GET",
+								path: "/code/$replaced%20$toggle",
+								headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+							)
+				   )*/
    }
+   
+   
+   
+def sleepForDuration(duration, callback = {})
+	{
+		def dTotalSleep = 0
+		def dStart = new Date().getTime()
+		def cmds = []
+		cmds << "delay 100"
+		log.debug "Start sleeping"
+		log.debug "dStart = ${dStart}"
+		
+		//While loop to sleep until duration reached
+		while (dTotalSleep <= duration)
+			{            
+				cmds
+				dTotalSleep = (new Date().getTime() - dStart)
+			}
+
+		def dEnd = new Date().getTime()
+		log.debug "dEnd = ${dEnd}"
+		log.debug "End Sleeping; Slept for ${dTotalSleep}ms"
+		
+		callback(dTotalSleep)
+	}
