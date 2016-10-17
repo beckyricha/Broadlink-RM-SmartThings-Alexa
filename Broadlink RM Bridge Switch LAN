@@ -91,8 +91,8 @@ def offPhysical()
 
 private put(toggle) 
 	{
-		def url1="xxx.xxx.x.x:xxxx"
-		def userpassascii= "user:password"
+		def url1="xxx.xxx.x.x:xxxx"  // Change this to use correct IP and PORT
+		userpassascii= "user:password" // Give correct user/password if you have setup on RM Bridge
 		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
 		
 		// Using Network ID instead of device name -- def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
@@ -103,6 +103,8 @@ private put(toggle)
 		
 		// 09/01/2016 Added debug log
 		log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle" 
+        
+        log.debug "DEVICE LABEL - ${device.label}" 
 		
 		//Sleeping for 500ms
 		//sleepForDuration(250)
