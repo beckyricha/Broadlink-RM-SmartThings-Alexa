@@ -91,8 +91,10 @@ def offPhysical()
 
 private put(toggle) 
 	{
-		def url1="xxx.xxx.x.x:xxxx"  // Change this to use correct IP and PORT
-		userpassascii= "user:password" // Give correct user/password if you have setup on RM Bridge
+		def url1="192.168.1.154:7474"
+		// def url1="xxx.xxx.x.x:xxxx"
+		def userpassascii= "admin:bridge"
+		//def userpassascii= "user:password"
 		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
 		
 		// Using Network ID instead of device name -- def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
@@ -106,8 +108,6 @@ private put(toggle)
         
         log.debug "DEVICE LABEL - ${device.label}" 
 		
-		//Sleeping for 500ms
-		//sleepForDuration(250)
         
         // Calling HTTP on/off			   
 		sendHubCommand
@@ -119,46 +119,4 @@ private put(toggle)
 								headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
 							)
 				   )
-		
-		//Sleeping for 500ms
-		//sleepForDuration(250)
-		 
-		 // 09/09/2016 Added debug log and recalling same http command one more time
-		// log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
-				   
-		// Calling HTTP on/off			   
-	/*	sendHubCommand
-					( 
-						new physicalgraph.device.HubAction
-							(
-								method: "GET",
-								path: "/code/$replaced%20$toggle",
-								headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
-							)
-				   )*/
    }
-   
-   
-   
-def sleepForDuration(duration, callback = {})
-	{
-		def dTotalSleep = 0
-		def dStart = new Date().getTime()
-		def cmds = []
-		cmds << "delay 100"
-		log.debug "Start sleeping"
-		log.debug "dStart = ${dStart}"
-		
-		//While loop to sleep until duration reached
-		while (dTotalSleep <= duration)
-			{            
-				cmds
-				dTotalSleep = (new Date().getTime() - dStart)
-			}
-
-		def dEnd = new Date().getTime()
-		log.debug "dEnd = ${dEnd}"
-		log.debug "End Sleeping; Slept for ${dTotalSleep}ms"
-		
-		callback(dTotalSleep)
-	}
