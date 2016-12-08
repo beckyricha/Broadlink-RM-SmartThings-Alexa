@@ -91,10 +91,8 @@ def offPhysical()
 
 private put(toggle) 
 	{
-		def url1="192.168.1.154:7474"
-		// def url1="xxx.xxx.x.x:xxxx"
-		def userpassascii= "admin:bridge"
-		//def userpassascii= "user:password"
+		 def url1="xxx.xxx.x.x:xxxx"
+		 def userpassascii= "user:password"
 		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
 		
 		// Using Network ID instead of device name -- def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
