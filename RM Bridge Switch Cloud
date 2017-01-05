@@ -42,7 +42,7 @@ def off() {
 }
  
 private put(toggle) {
-    def toReplace = device.displayName
+    def toReplace = device.name
 	def replaced = toReplace.replaceAll(' ', '%20')
 def params = [
     uri: "http://xxx.xxx.x.x:xxxx/code/$replaced%20$toggle"
