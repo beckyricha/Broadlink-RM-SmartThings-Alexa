@@ -62,22 +62,20 @@ def parse(String description)
 def on() 
 	{
 		log.debug "$device.displayName on()"
-		//sendEvent(name: "switch", value: "on")
-        sendEvent(name: "switch", value: "on", type: "physical")
+		sendEvent(name: "switch", value: "on")
 		put('on')
 	}
 
 def off() 
 	{
 		log.debug "$device.displayName off()"
-		//sendEvent(name: "switch", value: "off")  //itsamti - Had to use ', type: "physical" ' so that it will on/off via commands in routine. 
-        sendEvent(name: "switch", value: "off", type: "physical")
+		sendEvent(name: "switch", value: "off")
 		put('off')
 	}
 
 def onPhysical() 
 	{
-		log.debug "$device.displayName onPhysical()" //itsamti- Had to use ', type: "physical" ' so that it will on/off via commands in routine
+		log.debug "$device.displayName onPhysical()"
 		sendEvent(name: "switch", value: "on", type: "physical")
 		put('on')
 	}
@@ -91,8 +89,8 @@ def offPhysical()
 
 private put(toggle) 
 	{
-		 def url1="xxx.xxx.x.x:xxxx"
-		 def userpassascii= "user:password"
+		def url1="xxx.xxx.x.x:xxxx"
+		def userpassascii= "user:password"
 		def userpass = "Basic " + userpassascii.encodeAsBase64().toString()
 		
 		// Using Network ID instead of device name -- def toReplace = device.displayName  -- Updated by itsamti 09/01/2016
@@ -103,11 +101,25 @@ private put(toggle)
 		
 		// 09/01/2016 Added debug log
 		log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle" 
-        
-        log.debug "DEVICE LABEL - ${device.label}" 
 		
-        
-        // Calling HTTP on/off			   
+		// Calling HTTP on/off			   
+		sendHubCommand
+					( 
+						new physicalgraph.device.HubAction
+							(
+								method: "GET",
+								path: "/code/$replaced%20$toggle",
+								headers: [HOST: "${url1}", AUTHORIZATION: "${userpass}"],
+							)
+				   )
+		
+		//Sleeping for 500ms
+		sleepForDuration(500)
+		 
+		 // 09/09/2016 Added debug log and recalling same http command one more time
+		 log.debug "Running REST API Command http://${url1}/code/$replaced%20$toggle"
+				   
+		// Calling HTTP on/off			   
 		sendHubCommand
 					( 
 						new physicalgraph.device.HubAction
@@ -118,3 +130,28 @@ private put(toggle)
 							)
 				   )
    }
+   
+   
+   
+def sleepForDuration(duration, callback = {})
+	{
+		def dTotalSleep = 0
+		def dStart = new Date().getTime()
+		def cmds = []
+		cmds << "delay 100"
+		log.debug "Start sleeping"
+		log.debug "dStart = ${dStart}"
+		
+		//While loop to sleep until duration reached
+		while (dTotalSleep <= duration)
+			{            
+				cmds
+				dTotalSleep = (new Date().getTime() - dStart)
+			}
+
+		def dEnd = new Date().getTime()
+		log.debug "dEnd = ${dEnd}"
+		log.debug "End Sleeping; Slept for ${dTotalSleep}ms"
+		
+		callback(dTotalSleep)
+	}
