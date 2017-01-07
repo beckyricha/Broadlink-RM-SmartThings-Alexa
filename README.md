@@ -54,3 +54,14 @@ amzn_assoc_linkid = "7f56105f2dead9bfeb11f83ad9dd67f8";
 amzn_assoc_asins = "B00U5IXFGI,B00DQELHBS,B00PYMGVVQ,B00M2CUALS";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89762317-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
