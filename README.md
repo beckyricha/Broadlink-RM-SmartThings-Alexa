@@ -1,4 +1,4 @@
-# Broadlink-RM-SmartThings/Alexa control
+# Control Any Remote Controlled Device via Alexa
 
 ## If coming back, please review updated language on choosing dedicated android device (old phone batteries can do bad things!)
 
