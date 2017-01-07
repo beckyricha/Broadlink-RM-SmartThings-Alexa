@@ -41,4 +41,16 @@ The version with cloud control uses the following files:
 
 I also had a functioning version that used RM Tasker via the cloud, but have not recreated and tested it for publication because of the security issues I encountered and the difficulty integrating more than one Broadlink with this app.  If you want this version, please contact me.
 
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=ae042d4b-1dc0-49c9-bdcb-c75f357c93af&storeId=seniorhacks-20"></script>
+<script type="text/javascript">
+amzn_assoc_placement = "adunit0";
+amzn_assoc_search_bar = "true";
+amzn_assoc_tracking_id = "seniorhacks-20";
+amzn_assoc_ad_mode = "manual";
+amzn_assoc_ad_type = "smart";
+amzn_assoc_marketplace = "amazon";
+amzn_assoc_region = "US";
+amzn_assoc_title = "My Amazon Picks";
+amzn_assoc_linkid = "7f56105f2dead9bfeb11f83ad9dd67f8";
+amzn_assoc_asins = "B00U5IXFGI,B00DQELHBS,B00PYMGVVQ,B00M2CUALS";
+</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
