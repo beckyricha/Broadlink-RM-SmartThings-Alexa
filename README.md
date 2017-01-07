@@ -40,3 +40,5 @@ The version with cloud control uses the following files:
 - RM Bridge Cloud readme
 
 I also had a functioning version that used RM Tasker via the cloud, but have not recreated and tested it for publication because of the security issues I encountered and the difficulty integrating more than one Broadlink with this app.  If you want this version, please contact me.
+
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=ae042d4b-1dc0-49c9-bdcb-c75f357c93af&storeId=seniorhacks-20"></script>
