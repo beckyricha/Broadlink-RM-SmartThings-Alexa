@@ -31,9 +31,9 @@ The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/m
 - <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlinkswitch%20device%20handler'>Broadlinkswitch device handler</a>
 - <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Tasker%20LAN%20ReadMe.md'> RM Tasker LAN ReadMe </a>
 
-The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20LAN%20Readme.md'>RM Bridge version with local control</a> uses the following files:
+The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/Web-Site-Files/RM%20Bridge%20LAN%20Readme.html'>RM Bridge version with local control</a> uses the following files:
 - <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20RM%20Bridge%20Switch%20LAN'>Broadlink RM Bridge Switch LAN</a>
-- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20LAN%20Readme.md'>RM Bridge LAN readme</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/Web-Site-Files/RM%20Bridge%20LAN%20Readme.html'>RM Bridge LAN readme</a>
 
 The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>version with cloud control</a> uses the following files:
 - <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>Broadlink RM Bridge Switch Cloud</a>
