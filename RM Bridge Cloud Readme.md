@@ -54,3 +54,16 @@ Your device should now appear in the SmartThings app and work properly, and you 
 
 ## Adding devices that need multiple keys
 RM Bridge was not set up to directly use multiple keys.  To make this work, I set up a separate device handler for these, called <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud%20Multikeys'>"RM Bridge Switch Cloud Multikeys."</a>  I would only use this one for devices that actually need multiple keystrokes as it is somewhat slower than the main code.  I set it up to accept up to 4 keystrokes but this is easy for you to adjust.  This is installed just as the other device handler above was, including manually changing the ip, port and authorization information.  The device codes are also recorded the same way, but now their names need to be "device name on" "device name on2" "device name on3" and "device name on4", with the same pattern for any "off" sequence.  If any of these are not recorded it will just send a command that does nothing, but does not cause any errors.  If you need more or fewer keys (fewer just to speed it up if you don't need them but doesn't hurt anything to leave it alone), change the lines of code at 35 and 41.  Note that the number 0 is milliseconds between commands.  Some devices need a little time to process between commands, but usually the cloud processing lag will cover it.  If you are getting bad behavor in this area, you can tweak this number.  When you create the smartthings device, this is also as decribed above, but you need to select this device handler for your device type.  
+
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=316d030e-54f2-4085-bbc4-5ba45c996661&storeId=seniorhacks-20"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89762317-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
