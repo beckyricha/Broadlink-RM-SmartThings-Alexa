@@ -37,10 +37,10 @@ The <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Br
 <li><a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20RM%20Bridge%20Switch%20LAN'>Broadlink RM Bridge Switch LAN</a></li>
 <li><a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20LAN%20Readme.html'>RM Bridge LAN readme</a></li>
 </ul>
-The <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20Switch%20Cloud.html'>version with cloud control</a> uses the following files:
+The <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20Cloud%20Readme.html'>version with cloud control</a> uses the following files:
 <ul>
 <li><a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>Broadlink RM Bridge Switch Cloud</a></li>
-<li><a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20Switch%20Cloud.html'>RM Bridge Cloud readme</a></li>
+<li><a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20Cloud%20Readme.html'>RM Bridge Cloud readme</a></li>
 </ul>
 I also had a functioning version that used RM Tasker via the cloud, but have not recreated and tested it for publication because of the security issues I encountered and the difficulty integrating more than one Broadlink with this app.  If you want this version to play with, it's on the repo but not supported.  Find it <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/tasker_cloud_version'>here</a>.
 
