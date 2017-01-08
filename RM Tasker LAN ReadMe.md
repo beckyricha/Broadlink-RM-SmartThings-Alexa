@@ -84,3 +84,16 @@ If you truly love this but want it to work with more than one Broadlink scattere
 ## Note for those who want to use pretty device templates in the e-control app
 
 If you want to use the nice device templates in e-control and not make separate on and off buttons, it takes more work but you have two other options. Either way you would need to find the right codes in the RM Tasker app. You can either change the code's name in rm tasker or find the codes you want to link to "on" and "off," and manually enter your device using the manual entry smartapp as described under troubleshooting for missing devices above.
+
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=316d030e-54f2-4085-bbc4-5ba45c996661&storeId=seniorhacks-20"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89762317-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
