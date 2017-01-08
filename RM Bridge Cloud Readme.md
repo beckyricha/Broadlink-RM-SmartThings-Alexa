@@ -1,4 +1,4 @@
-# Read the main <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/README.md'>readme</a> for this repository first!
+# Read the main <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/index.html'>readme</a> for this repository first!
 This document contains the setup instructions for the SmartApp version that does not require a SmartThings hub, instead using cloud-based control and the app <a href='https://play.google.com/store/apps/details?id=de.fun2code.android.rmbridge&hl=en'>"RM Bridge"</a> as a bridge.  This requires that you open a port on your router.  You should, at a minimum, set up the security features in the RM Bridge app, but may wish to consider other security concepts as well.  Research and decisions about network security are your responsibility, and I won't be liable for that if you use this code.
 
 ## Set up your network
