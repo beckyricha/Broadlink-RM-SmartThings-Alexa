@@ -1,4 +1,4 @@
-# Read the main <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/README.md'>readme</a> for this repository first!
+# Read the main <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/index.html'>readme</a> for this repository first!
 This document contains the setup instructions for the SmartApp version that uses the SmartThings hub for local LAN control and the app "RM Bridge" as a bridge.
 
 ## Set-up your Broadlink RM:
