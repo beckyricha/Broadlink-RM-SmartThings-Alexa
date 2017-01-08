@@ -31,7 +31,7 @@ The <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Ta
 <li><a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20Manual%20device%20entry'>Broadlink Manual device entry</a></li>
 <li><a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlinkswitch%20device%20handler'>Broadlinkswitch device handler</a></li>
 <li><a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Tasker%20LAN%20ReadMe.html'> RM Tasker LAN ReadMe </a></li>
-<ul>
+</ul>
 The <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/RM%20Bridge%20LAN%20Readme.html'>RM Bridge version with local control</a> uses the following files:
 <ul>
 <li><a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20RM%20Bridge%20Switch%20LAN'>Broadlink RM Bridge Switch LAN</a></li>
