@@ -13,7 +13,7 @@ Intermediate. Need a comfort level with digging through things that appear compl
 
 2.	Android device on the same local network as the Broadlink. This could be a dedicated device (I use a <a href='https://www.amazon.com/gp/product/B01LCQNWNM/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=ll1&tag=seniorhacks-20&linkId=98ab0e13cc4bc9caa0bee166bcb8c05b'>cheap android box</a>) or your phone, but this setup will only work while the Android device is on the same network as the Broadlink and is running the bridge app described under #3 (a battery drainer, so probably want a plugged in Android device). This may also work if the Android is on the local network via vpn, but I have not tested it. You can use this code to operate your devices from outside your network.   It is only the Android "bridge" device that must be on the same network as your Broadlink RM. IMPORTANT UPDATE September 2016: I was using an old Nexus 4 but choose something else.  Please research your device to see how it behaves if left plugged in for long periods.  Likely will work best with an Android TV box, a virtual machine on another computer, or similar setup without potential battery issues.  Search the web for "Nexus 4 battery bulging" to see the very bad phone self-destruction that happened due to leaving it plugged in and running for this app.  Everything else here works fine and any old cheap android box should work if this baattery issue is avoided.
 
-3.	Android app used to “bridge” between the Broadlink and web-based services like smartthings.  This is needed because Broadlink does not publish information that would allow users to directly interface with it.  Other developers have figured out a way around this, so I am not attempting to reinvent it.  One possible app is a free option (called <a href='https://play.google.com/store/apps/details?id=de.fun2code.android.rmbridge&hl=en'>RM Bridge</a>) and the other (<a href='https://play.google.com/store/apps/details?id=us.originally.tasker&hl=en'>RM Tasker</a>) costs just over $5 at the time of this writing but is available for a 7 day free trial.  I had poor results with the security on the RM Tasker app (an Internet pen pal testing this with me was able to access my equipment without my password from outside my network), so I cannot recommend that one unless you control over your LAN with a smartthings hub.  For anyone using either app via the cloud, users are cautioned to test whether the security meets their expectations.  There are also differences in how to set up and use these sets of code, as well as how they integrate multiple Broadlink devices.  Read the separate Readme files for each app to get a feel for which is your best choice.  The main upside to the RM Tasker app is that it integrates with Tasker (an Android app commonly used for automation) if you have interest in also using your Broadlink RM device this way.  This version also works much more simply/reliably with devices where you want to use multiple remote keys for "on" (for instance to "turn on" a Tv channel by sending several numbers).  I have it working both ways but RM Tasker was made to do it versus me having to create a workaround for RM Bridge.
+3.	Android app used to “bridge” between the Broadlink and web-based services like smartthings.  This is needed because Broadlink does not publish information that would allow users to directly interface with it.  Other developers have figured out a way around this, so I am not attempting to reinvent it.  One possible app is a free option (called <a href='https://play.google.com/store/apps/details?id=de.fun2code.android.rmbridge&hl=en'>RM Bridge</a>) and the other (<a href='https://play.google.com/store/apps/details?id=us.originally.tasker&hl=en'>RM Tasker</a>) costs just over $5 at the time of this writing but is available for a 7 day free trial.  I had poor results with the security on the RM Tasker app (a friend testing this with me was able to view the MAC of my Broadlink without my password from outside my network), so I cannot recommend that one unless you control over your LAN with a smartthings hub.  For anyone using either app via the cloud, users are cautioned to test whether the security meets their expectations.  There are also differences in how to set up and use these sets of code, as well as how they integrate multiple Broadlink devices.  Read the separate Readme files for each app to get a feel for which is your best choice.  The main upside to the RM Tasker app is that it integrates with Tasker (an Android app commonly used for automation) if you have interest in also using your Broadlink RM device this way.  This version also works much more simply/reliably with devices where you want to use multiple remote keys for "on" (for instance to "turn on" a Tv channel by sending several numbers).  I have it working both ways but RM Tasker was made to do it versus me having to create a workaround for RM Bridge.
 
 4.	A free smartthings account.  Get one from the Android app or by going to <a href='https://graph.api.smartthings.com/'>the SmartThings developer site</a>.  You will need to go to this web site anyway, best on a computer, to set up these tools.
 
@@ -25,35 +25,23 @@ Intermediate. Need a comfort level with digging through things that appear compl
 
 ## Options and Files on this site:
 
-The RM Tasker Version with local control was published first, and uses the following files:
-- Broadlink LAN SmartApp
-- Broadlink Manual device entry
-- Broadlinkswitch device handler
-- RM Tasker LAN ReadMe
+The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Tasker%20LAN%20ReadMe.md'>RM Tasker Version with local control</a> was published first, and uses the following files:
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20LAN%20SmartApp'>Broadlink LAN SmartApp</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20Manual%20device%20entry'>Broadlink Manual device entry</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlinkswitch%20device%20handler'>Broadlinkswitch device handler</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Tasker%20LAN%20ReadMe.md'> RM Tasker LAN ReadMe </a>
 
-The RM Bridge version with local control uses the following files:
-- Broadlink RM Bridge Switch LAN
-- RM Bridge LAN readme
+The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20LAN%20Readme.md'>RM Bridge version with local control</a> uses the following files:
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/Broadlink%20RM%20Bridge%20Switch%20LAN'>Broadlink RM Bridge Switch LAN</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20LAN%20Readme.md'>RM Bridge LAN readme</a>
 
-The version with cloud control uses the following files:
-- Broadlink RM Bridge Switch Cloud
-- RM Bridge Cloud readme
+The <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>version with cloud control</a> uses the following files:
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>Broadlink RM Bridge Switch Cloud</a>
+- <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20Cloud'>RM Bridge Cloud readme</a>
 
-I also had a functioning version that used RM Tasker via the cloud, but have not recreated and tested it for publication because of the security issues I encountered and the difficulty integrating more than one Broadlink with this app.  If you want this version, please contact me.
+I also had a functioning version that used RM Tasker via the cloud, but have not recreated and tested it for publication because of the security issues I encountered and the difficulty integrating more than one Broadlink with this app.  If you want this version to play with, it's on the repo but not supported.  Find it <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/tasker_cloud_version'>here</a>.
 
-<script type="text/javascript">
-amzn_assoc_placement = "adunit0";
-amzn_assoc_search_bar = "true";
-amzn_assoc_tracking_id = "seniorhacks-20";
-amzn_assoc_ad_mode = "manual";
-amzn_assoc_ad_type = "smart";
-amzn_assoc_marketplace = "amazon";
-amzn_assoc_region = "US";
-amzn_assoc_title = "My Amazon Picks";
-amzn_assoc_linkid = "7f56105f2dead9bfeb11f83ad9dd67f8";
-amzn_assoc_asins = "B00U5IXFGI,B00DQELHBS,B00PYMGVVQ,B00M2CUALS";
-</script>
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=ae042d4b-1dc0-49c9-bdcb-c75f357c93af&storeId=seniorhacks-20"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
