@@ -1,4 +1,4 @@
-# Read the <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/index.html'>main readme</a> for this repository first!
+﻿# Read the <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/index.html'>main readme</a> for this repository first!
 This document contains the setup instructions for the SmartApp version that uses the SmartThings hub for local LAN control and the RM Tasker app as a bridge.
 
 ## Set-up your Broadlink RM:
@@ -86,7 +86,7 @@ If you truly love this but want it to work with more than one Broadlink scattere
 If you want to use the nice device templates in e-control and not make separate on and off buttons, it takes more work but you have two other options. Either way you would need to find the right codes in the RM Tasker app. You can either change the code's name in rm tasker or find the codes you want to link to "on" and "off," and manually enter your device using the manual entry smartapp as described under troubleshooting for missing devices above.
 
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=316d030e-54f2-4085-bbc4-5ba45c996661&storeId=seniorhacks-20"></script>
-
+<p><small>I am a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for me to earn fees by linking to Amazon.com and affiliated sites.</small></p>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
