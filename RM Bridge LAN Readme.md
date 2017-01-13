@@ -1,4 +1,4 @@
-﻿# Read the main <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa/index.html'>readme</a> for this repository first!
+﻿# Read the main <a href='https://beckyricha.github.io/Broadlink-RM-SmartThings-Alexa.html'>readme</a> for this repository first!
 This document contains the setup instructions for the SmartApp version that uses the SmartThings hub for local LAN control and the app "RM Bridge" as a bridge.
 
 ## Set-up your Broadlink RM:
@@ -50,8 +50,6 @@ Your device should now appear in the SmartThings app and work properly, and you 
 ## Adding devices that need multiple keys
 RM Bridge was not set up to directly use multiple keys.  To make this work, I set up a separate device handler for these, called <a href='https://github.com/beckyricha/Broadlink-RM-SmartThings-Alexa/blob/master/RM%20Bridge%20Switch%20LAN%20Multikey'>"RM Bridge Switch LAN Multikey."</a>  I would only use this one for devices that actually need multiple keystrokes as it is slower and less reliable than the main code.  I set it up to take up to 4 keystrokes.  It is installed just as the other device handler above was, including manually changing the ip, port and authorization information.  The device codes are also recorded the same way, but now their names are "device name on" "device name on2" "device name on3" and "device name on4", with the same pattern for any "off" sequence.  If any are not recorded it just sends a command that does nothing, but does not cause any errors.  If you need more or fewer keys, change the lines of code at 36 and 40.  Note that the number 1000 is milliseconds between commands.  I found that my hub needs this long to clear and accept another command, but you may need to tweak this depending on how yours is responding.  When you create the smartthings device, this is also as decribed above, but you need to select this device handler for your device type.  If this does not work well, I have also developed a cloud-based version that may work more reliably if you want to open a router port. I don;t routinely usse this one, so please start an issue if you have trouble and I'll try some things that may improve it.  I don't plan to do this until someone needs it.
 
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=316d030e-54f2-4085-bbc4-5ba45c996661&storeId=seniorhacks-20"></script>
-<p><small>I am a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for me to earn fees by linking to Amazon.com and affiliated sites.</small></p>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
