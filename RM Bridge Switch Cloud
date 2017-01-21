@@ -19,7 +19,7 @@
 // 09/01/2016 - itsamti - Added new switch definition below 
 metadata {
 	
-    definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
+    definition (name: "RM Bridge Switch Cloud", namespace: "beckyricha", author: "BeckyR") {
 		capability "Switch"
 
 		command "onPhysical"
