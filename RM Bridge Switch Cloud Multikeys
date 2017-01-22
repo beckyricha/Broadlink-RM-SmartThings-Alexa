@@ -17,7 +17,7 @@
  */
 metadata {
 	
-    definition (name: "RM Bridge Switch LAN", namespace: "beckyricha", author: "BeckyR") {
+    definition (name: "RM Bridge Switch Cloud multikeys", namespace: "beckyricha", author: "BeckyR") {
 		capability "Switch"
 
 		command "onPhysical"
